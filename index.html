@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guessing Game</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+        z-index:-1;
+      }
+      body {
+        font-family: 'IBM Plex Sans Condensed', sans-serif;
+        z-index: 1;
+      }
+      h1 {
+           text-align: center;
+           padding: 25px 0px 10px 0px;
+           z-index: 2;
+           color: rgb(212, 236, 241)
+      }
+      h1 span {
+        background-color: rgba(0, 0, 0, 0.342);
+        box-shadow: 0px 0px 40px 5px #00000080;
+      }
+      h2 {
+           text-align: center;
+           z-index: 2;
+           color: rgb(228, 203, 92)
+      } 
+      h2 span {
+        background-color: rgba(0, 0, 0, 0.342);
+        border-radius: 10px;
+        box-shadow: 0px 0px 40px 5px #00000080;
+      }
+      #main {
+          text-align: center;
+          margin: 30px 0px 50px 0px;
+      } 
+      
+      .center {
+        text-align: center;
+      }
+      #input {
+        border-radius: 300px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        font-size: 100px;
+        outline: 0;
+        background-color: rgb(0, 0, 0);
+        color: transparent;
+        text-shadow: 0 0 0 rgb(123, 189, 184);
+      }
+      #input:focus{
+        outline: none;
+      }
+      #submit {
+        margin: 0px;
+        border-radius: 100px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        outline: 0;
+        left: -35px;
+        bottom: -15px;
+        position: relative;
+        font-size: 12px;
+        background-color: rgb(165, 211, 188);
+      }
+
+      #clue {
+        margin: 20px 30px 0px 0px;
+        padding-bottom: 15px;
+        color: white;
+
+      }
+      
+      #guesses {
+          margin: 0 auto;
+      }
+      .guess {
+          margin: 0px 10px 5px 10px;
+          font-size: 2em;
+          text-align: left;
+          padding: 40px;
+          display: inline-block;
+          border: none;
+          border-radius: 10px;
+          background-color: rgb(112, 174, 189)
+      }
+      ul {
+          list-style: none;
+          padding: 0;
+      }
+      img {
+          max-width: 400px;
+          max-height: 70px;
+          width: auto;
+          height: auto;
+      }
+      #fullstack {
+          max-height: 70px;
+          padding-left: 0px;
+         
+      }
+      #gracehopper {
+          max-height: 50px;
+          padding-right: 100px;
+      }
+      #reset {
+          margin: 0px 10px 0px 0px;
+      }
+      #hint {
+          margin: 0px 0px 0px 10px;
+      }
+      #author {
+          font-size: 18px;
+          margin: 0px 130px 0px 0px;
+      }
+      #footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(94, 148, 161);
+      }
+      th{
+          width:40%;
+          text-align: center;
+      }
+    </style>
+
+  </head>
+  <body>
+      <video autoplay muted loop id="myVideo">
+          <source src="4k background footage Ae plugin plexus.mp4" type="video/mp4">
+        </video>
+
+      <div id='app'>
+
+        <div id='headers'>
+          <h1><span>Can You Guess The Number?</span></h1>
+          <h2 id='feedback'>Guess between 1 and 100!</h2>
+        </div>
+
+        <div id='main'>
+          <div id='input-parent'>
+            <input type="text" name="Guess" id="input">
+              <button id = "submit">Submit</button>
+          </div>
+
+          <div id='clue'></div>
+
+          <div id='guesses'>
+            <ul id='guess-list'>
+                <li class="guess">?</li>
+                <li class="guess">?</li>
+                <li class="guess">?</li>
+                <li class="guess">?</li>
+                <li class="guess">?</li>
+            </ul>
+          </div>
+
+          <div id="menu-btns">
+            <button id = 'reset' class="btn btn-outline-warning">Reset</button>
+            <button id='hint' class="btn btn-outline-info">Hint?</button>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div id='footer'>
+        <table>
+        <tr>
+          <th>
+            <img src="fa-logo@2x_preview.png" id="fullstack"></img>
+          </th>
+          
+          <th>
+            <p id="author">Project by Bronwyn Harris</p>
+          </th>
+
+          <th>
+            <img src='grace_hopper_academy_preview.png' id="gracehopper"></img>
+          </th>
+
+
+        </tr>
+    </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src = GuessingGame.js></script>
+  </body>
+</html>
